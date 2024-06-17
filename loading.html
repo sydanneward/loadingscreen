@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Proxima Nova', sans-serif;
+            font-weight: bold;
+            color: #ab1417;
+            text-align: center;
+        }
+        .animation-container {
+            position: relative;
+            width: 100%;
+            max-width: 810px;
+            height: 60%;
+            overflow: hidden;
+        }
+        .animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: left 1s;
+        }
+        .visible {
+            display: flex;
+        }
+        .img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: black solid 4px;
+        }
+        .bottom-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            text-align: left;
+            flex: 1;
+        }
+        .line {
+            height: 100%;
+            background-color: black;
+            width: 4px;
+            margin-right: 20px;
+        }
+        @media (max-width: 600px) {
+            .bottom-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .logo, .line {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 1em;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container">
+        <div class="animation visible" id="animation1">
+            <img class="img" src="cow_stack.gif" alt="Loading...">
+        </div>
+        <div class="animation" id="animation2">
+            <img class="img" src="map_grid_animation.gif" alt="Loading...">
+        </div>
+        <div class="animation" id="animation3">
+            <img class="img" src="icon_fill_animation.gif" alt="Loading...">
+        </div>
+    </div>
+    <div class="bottom-container">
+        <img class="logo" src="images/Untitled-1 2.png" alt="Logo">
+        <div class="line"></div>
+        <p id="text1">RanchIQ is running so many policy iterations, they could reach the moon if they were cows.</p>
+        <p id="text2" style="display: none;">RanchIQ is calculating the best possible grid combinations</p>
+        <p id="text3" style="display: none;">RanchIQ is pulling the best possible policy options for your risk tolerance.</p>
+    </div>
+    <script>
+        const animations = document.querySelectorAll('.animation');
+        const texts = document.querySelectorAll('.bottom-container p');
+        let currentAnimation = 0;
+
+        setInterval(() => {
+            animations[currentAnimation].classList.remove('visible');
+            texts[currentAnimation].style.display = 'none';
+            currentAnimation = (currentAnimation + 1) % animations.length;
+            animations[currentAnimation].classList.add('visible');
+            texts[currentAnimation].style.display = 'block';
+        }, 10000); // 10 seconds per animation
+
+        // Initialize the first animation and text as visible
+        animations[currentAnimation].classList.add('visible');
+        texts[currentAnimation].style.display = 'block';
+    </script>
+</body>
+</html>
