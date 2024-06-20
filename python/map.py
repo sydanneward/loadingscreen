@@ -29,7 +29,7 @@ def create_map_frame(grid_indices, total_grids, frame_number, map_image):
     return frame_path
 
 # Load map image
-map_image_path = 'images/Fancy Blank Map.png'
+map_image_path = 'static/images/Map to Use for Tradeshow copy.png'
 map_image = np.array(Image.open(map_image_path))
 
 # Parameters

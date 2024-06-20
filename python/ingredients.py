@@ -34,17 +34,17 @@ total_frames = total_icons * 10
 
 # Define the paths to the icon images in the subfolder
 icon_image_paths = [
-    'images/paint-bucket.png',
-    'images/paint-bucket.png',
-    'images/paint-bucket.png',
-    'images/paint-bucket.png'
+    'static/images/cow.png',
+    'static/images/cow.png',
+    'static/images/cow.png',
+    'static/images/cow.png',
 ]
 
 filled_icon_image_paths = [
-    'images/paint-bucket (1).png',
-    'images/paint-bucket (1).png',
-    'images/paint-bucket (1).png',
-    'images/paint-bucket (1).png'
+    'static/images/cow (1).png',
+    'static/images/cow (1).png',
+    'static/images/cow (1).png',
+    'static/images/cow (1).png',
 ]
 
 # Load the images

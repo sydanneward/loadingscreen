@@ -42,9 +42,9 @@ total_cows = 10
 total_frames = total_cows + 10
 
 # Define the paths to the images in the subfolder
-earth_image_path = 'images/Untitled-1.png'
-moon_image_path = 'images/Untitled-1-02.png'
-cow_image_path = 'images/Untitled-1-03.png'
+earth_image_path = 'static/images/Graphics.png'
+moon_image_path = 'static/images/moon.png'
+cow_image_path = 'static/images/Walking_Cow-01.png'
 
 # Load the images
 earth_image = load_image(earth_image_path)
